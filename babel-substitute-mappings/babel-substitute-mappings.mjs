@@ -1,7 +1,6 @@
-import fs from "fs"
 let [m, f] = createMappings()
 
-export default function ({ types: t }) {
+module.exports = function ({ types: t }) {
 	return {
 		visitor: {
 			Program(path, state) {
@@ -66,7 +65,7 @@ function replaceMappings(mainPath, t, f, m) {
 
 	return isImported
 }
-import request from "sync-request"
+const request = require("sync-request");
 function createMappings() {
 	let m = {}
 	let f = {}
